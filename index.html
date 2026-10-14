@@ -1,0 +1,634 @@
+<title>Upside Till Cash Back</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
+<style>
+/* Layout: one long brand page in Upside's own language. Whitecap ground, Gilmer headlines, Pulse marker as the only flourish,
+   a thin Pulse thread that runs through the hero the way it runs through the ads. Parts follow the assignment order. */
+@font-face{font-family:"Gilmer";src:url("gilmer-medium.otf") format("opentype");font-weight:500;font-display:swap}
+:root{
+  --bg:#F6F5F2; --surface:#FFFFFF; --ink:#001400; --muted:#4A5A55; --line:#E2E1DC;
+  --blue:#0047FF; --pulse:#67F3B9; --surge:#1E4B42; --swell:#D5D7FC; --on-blue:#F6F5F2;
+  --display:"Gilmer","Poppins",Arial,sans-serif; --body:"Inter Tight",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#07120F; --surface:#0E1C18; --ink:#F6F5F2; --muted:#A9B8B2; --line:#1F332D;
+  --blue:#5C86FF; --pulse:#67F3B9; --surge:#2C6A5D; --swell:#232B55; --on-blue:#F6F5F2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#07120F; --surface:#0E1C18; --ink:#F6F5F2; --muted:#A9B8B2; --line:#1F332D;
+  --blue:#5C86FF; --pulse:#67F3B9; --surge:#2C6A5D; --swell:#232B55; --on-blue:#F6F5F2; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);letter-spacing:-0.01em}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-0.02em;line-height:1.05;text-wrap:balance;margin:0}
+h2{font-size:clamp(34px,5vw,56px)}
+h3{font-size:24px}
+p{margin:0;max-width:64ch}
+.mark{background:linear-gradient(transparent 52%,var(--pulse) 52%,var(--pulse) 92%,transparent 92%);color:inherit;padding:0 .08em}
+.label{font:600 13px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.muted{color:var(--muted)}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px;overflow-x:auto}
+nav.top img{height:22px;width:auto;flex:none}
+nav.top .links{display:flex;gap:6px;flex-wrap:nowrap}
+nav.top a{text-decoration:none;color:var(--ink);font:500 14px var(--body);padding:6px 12px;border-radius:999px;white-space:nowrap}
+nav.top a:hover{background:var(--swell)}
+.wm-dark{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .wm-light{display:none}:root:not([data-theme="light"]) .wm-dark{display:block}}
+:root[data-theme="dark"] .wm-light{display:none}:root[data-theme="dark"] .wm-dark{display:block}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:72px 64px}
+.hero h1{font-size:clamp(48px,8vw,104px);line-height:.98}
+.hero .lede{font-size:20px;margin-top:24px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:28px;font-size:15px}
+.hero .meta b{font-weight:600}
+.phone{position:relative;justify-self:center;width:min(100%,320px);aspect-ratio:9/16;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,20,0,.45);background:#000}
+.phone video{width:100%;height:100%;object-fit:cover;display:block}
+.thread{position:absolute;inset:0;pointer-events:none}
+.thread path{fill:none;stroke:var(--pulse);stroke-width:6;stroke-linecap:round}
+
+/* sections */
+section.part{border-top:1px solid var(--line)}
+section.part>.wrap{padding-block:72px;display:grid;gap:32px}
+.head{display:grid;gap:12px}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.g6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:10px;align-content:start;min-width:0}
+.big{font-family:var(--display);font-weight:500;font-size:clamp(28px,4vw,44px);letter-spacing:-0.02em;line-height:1.08}
+figure{margin:0;display:grid;gap:10px;min-width:0}
+figure img,figure video{width:100%;height:auto;display:block;border-radius:14px;background:var(--swell)}
+figcaption{font-size:14px;color:var(--muted);line-height:1.45}
+figcaption b{color:var(--ink);font-weight:600}
+.chip{display:inline-block;font:600 12px/1 var(--body);padding:6px 10px;border-radius:999px;background:var(--swell);color:var(--ink)}
+.chip.p{background:var(--pulse);color:#001400}
+.vrow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.vrow figure img{border-radius:10px}
+.vgroup{display:grid;gap:12px}
+.vgroup h3{font-size:20px}
+.sb{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.sb figure img{aspect-ratio:9/16;object-fit:cover}
+.sb .n{font:600 13px var(--body);color:var(--blue);letter-spacing:.06em;text-transform:uppercase}
+.sb dl{margin:0;display:grid;gap:6px;font-size:14px;line-height:1.45}
+.sb dt{font-weight:600}
+.sb dd{margin:0;color:var(--muted)}
+.film{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:40px;align-items:start}
+.film video{border-radius:20px;width:100%;background:#000}
+.hooks figure video{aspect-ratio:9/16;object-fit:cover;background:#000}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.45}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 13px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;white-space:nowrap}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+pre{margin:0;white-space:pre-wrap;font:400 14px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;overflow-x:auto}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ba .box p{font-size:15px}
+.ba .box .from{color:var(--muted)}
+.dl{display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.go{border:0;cursor:pointer}.dl .go:hover{filter:brightness(1.1)}.dl .go[disabled]{opacity:.6;cursor:progress}
+.dlall{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:24px}
+.dlall .go{background:var(--pulse);color:#001400}
+#dlnote{font-size:14px;color:var(--muted)}
+.dl .big{font-size:24px}
+.go{margin-top:auto;display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font:500 15px var(--body);background:var(--blue);color:var(--on-blue);padding:10px 18px;border-radius:999px}
+.dl ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+details.pd summary{cursor:pointer;font:500 15px var(--body);color:var(--blue);padding:6px 0}
+details.pd[open] summary{margin-bottom:8px}
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;font-size:14px;color:var(--muted)}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:48px}
+  .g3,.g5,.g6{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .film{grid-template-columns:1fr}
+  .film video{max-width:360px}
+  .vrow{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sb{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .g2,.g3,.ba{grid-template-columns:1fr}
+  .vrow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sb{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){.phone video{animation:none}}
+.dir{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:28px;align-items:start}
+.dir+.dir{margin-top:8px}
+@media (max-width:900px){.dir{grid-template-columns:1fr}}
+</style>
+
+<nav class="top" aria-label="Sections">
+  <div class="wrap">
+    <img class="wm-light" src="wordmark-blue.png" alt="upside">
+    <img class="wm-dark" src="wordmark-white.png" alt="upside">
+    <div class="links">
+      <a href="#platform">Platform</a><a href="#statics">Static ads</a><a href="#variations">Variations</a>
+      <a href="#storyboard">Storyboard</a><a href="#video">Video</a><a href="#behind">Behind the film</a><a href="#hooks">Hooks</a><a href="#process">Process</a><a href="#downloads">Downloads</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="thread" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20 600 C 220 520 260 690 470 640 C 640 600 600 470 700 470 C 800 470 820 610 720 630 C 620 650 640 510 760 490 C 900 470 980 620 1220 560"/>
+  </svg>
+  <div class="wrap">
+    <div>
+      <div class="label">Moburst home assignment · AI Design Lead</div>
+      <h1 style="margin-top:16px">Till <span class="mark">cash back</span> do us part</h1>
+      <p class="lede">A campaign for Upside about the everyday couple who never miss a chance to earn. Six parts, from the big idea to the final video, plus the process behind every choice.</p>
+      <div class="meta"><span><b>Talia Naiman</b></span><span>Client: Upside</span><span>October 2026</span></div>
+    </div>
+    <div class="phone"><video src="film.mp4" poster="sb1.jpg" autoplay muted loop playsinline controls aria-label="The film"></video></div>
+  </div>
+</header>
+
+<!-- PART 1 -->
+<section class="part" id="platform"><div class="wrap">
+  <div class="head"><div class="label">Part 1 · Campaign platform</div><h2>The big idea</h2></div>
+  <div class="grid g2">
+    <div class="box"><div class="label">Big idea</div><div class="big">Till cash back do us part</div>
+      <p>Every couple has one person who will go to any length so nothing slips by. In our world that person runs across the lawn in a robe and rollers because her husband is about to fill up without claiming the offer. Upside turns that small household drama into a vow: you never let cash back go unclaimed again.</p></div>
+    <div class="box"><div class="label">Key message</div><div class="big">Claim. Pay like always. Earn.</div>
+      <p>Real cash back on the gas, groceries and dinners you already buy, with no receipts and no change to how you pay. Up to 25¢/gal on gas, $1B+ already earned by Upside users.</p></div>
+  </div>
+  <div class="grid g3">
+    <div class="box"><h3>Who it's for</h3><p>Value minded drivers and households, 25 to 55, who fill up every week and shop and eat out locally. They are not coupon hunters. They want a small win that takes no effort.</p></div>
+    <div class="box"><h3>Why it fits Upside</h3><p>The brand voice is neighborly, trustworthy and clever. Humor from real life, real people and a simple three step product story deliver all three, and they stand apart from a category full of fear driven "gas prices" ads.</p></div>
+    <div class="box"><h3>The thread</h3><p>A thin <span class="mark">Pulse green line</span> runs through every asset and carries you from one moment to the next. It echoes the cyclical arrow in Upside's icon: money that leaves you and comes back.</p></div>
+  </div>
+</div></section>
+
+<!-- PART 2 -->
+<section class="part" id="statics"><div class="wrap">
+  <div class="head"><div class="label">Part 2 · Static ads · 1080×1080</div><h2>Three ads, three visual approaches</h2>
+    <p class="muted">One campaign world, three treatments: lifestyle photography from the film, typography as the hero, and Upside's own vector illustration language. All three share Gilmer Medium headlines, the book wordmark, the Pulse accent and the disclaimer, so they read as one campaign in the feed.</p></div>
+  <div class="grid g3">
+    <figure><img src="hero_d1.jpg" alt="Ad 1, photography: the wife skateboarding over a sprinkler" loading="lazy"><figcaption><b>Ad 1 · Photography.</b> A frame from the film composited in Photoshop into a coded brand layout, her head breaking out of the photo card. "Dress code: cash back" with "cash back" on a Pulse marker.</figcaption></figure>
+    <figure><img src="hero_d2.jpg" alt="Ad 2, typography: a shopping list" loading="lazy"><figcaption><b>Ad 2 · Typography.</b> A shopping list where eggs and milk get crossed out and "cash back" gets highlighted. No image needed to tell the joke.</figcaption></figure>
+    <figure><img src="hero_d3.jpg" alt="Ad 3, vector illustration: woman with coffee on a skateboard" loading="lazy"><figcaption><b>Ad 3 · Vector illustration.</b> The film's heroine in Upside's illustration style, with a thin Pulse thread and an offer chip.</figcaption></figure>
+  </div>
+  <div class="grid g2" style="align-items:start">
+    <figure><video src="motion.mp4" controls playsinline preload="metadata" poster="motion_poster.jpg"></video><figcaption><b>Bonus · Motion.</b> The vector direction in motion: kinetic word beats, iris reveals, and a skater and a car that pull the thread into the next scene. Music made in Suno.</figcaption></figure>
+    <div class="box"><h3>Why three approaches</h3><p>Each treatment wins a different kind of attention. Photography carries the film's humor and real people, typography stops the scroll with a joke you read in one second, and illustration explains the product with Upside's own visual language. Testing all three tells us which world to invest in.</p></div>
+  </div>
+</div></section>
+
+<!-- PART 3 -->
+<section class="part" id="variations"><div class="wrap">
+  <div class="head"><div class="label">Part 3 · Variations</div><h2>Five per ad, generated from one spec</h2>
+    <p class="muted">Each ad was turned into a template that keeps the message and brand fixed, and each variation changes what you see: a different moment from the film, a different composition of the same type idea, or a different scene in the illustration world, plus hook copy and colourway. One renderer draws every file, so grid, type and logo cannot drift, and every variation passes an automatic brand check for banned words, spelling and the disclaimer. Each one changes a variable worth testing, which also gives Meta's delivery system genuinely different creatives.</p></div>
+  <div class="vgroup"><h3>Ad 1 · Photography</h3><p class="muted" style="font-size:15px">Layouts built as code with the photo card left open, then each film frame composited by hand in Photoshop. The card moves between centre, left and right.</p><div class="vrow">
+    <figure><img src="d1_A.jpg" alt="" loading="lazy"><figcaption><span class="chip p">A</span> The jump · Dress code</figcaption></figure>
+    <figure><img src="d1_B.jpg" alt="" loading="lazy"><figcaption><span class="chip">B</span> The stare · Saturday plans</figcaption></figure>
+    <figure><img src="d1_C.jpg" alt="" loading="lazy"><figcaption><span class="chip">C</span> The ride · Whitecap</figcaption></figure>
+    <figure><img src="d1_D.jpg" alt="" loading="lazy"><figcaption><span class="chip">D</span> The claim · Surge</figcaption></figure>
+    <figure><img src="d1_E.jpg" alt="" loading="lazy"><figcaption><span class="chip">E</span> Dave · offer first</figcaption></figure>
+  </div></div>
+  <div class="vgroup"><h3>Ad 2 · Typography</h3><div class="vrow">
+    <figure><img src="d2_A.jpg" alt="" loading="lazy"><figcaption><span class="chip p">A</span> Notebook list</figcaption></figure>
+    <figure><img src="d2_B.jpg" alt="" loading="lazy"><figcaption><span class="chip">B</span> Receipt</figcaption></figure>
+    <figure><img src="d2_C.jpg" alt="" loading="lazy"><figcaption><span class="chip">C</span> Sticky note · Surge</figcaption></figure>
+    <figure><img src="d2_D.jpg" alt="" loading="lazy"><figcaption><span class="chip">D</span> One giant word</figcaption></figure>
+    <figure><img src="d2_E.jpg" alt="" loading="lazy"><figcaption><span class="chip">E</span> Checklist</figcaption></figure>
+  </div></div>
+  <div class="vgroup"><h3>Ad 3 · Vector illustration</h3><div class="vrow">
+    <figure><img src="d3_A.jpg" alt="" loading="lazy"><figcaption><span class="chip p">A</span> Control · Morning gas</figcaption></figure>
+    <figure><img src="d3_B.jpg" alt="" loading="lazy"><figcaption><span class="chip">B</span> Stacking · up to 3x</figcaption></figure>
+    <figure><img src="d3_C.jpg" alt="" loading="lazy"><figcaption><span class="chip">C</span> Groceries</figcaption></figure>
+    <figure><img src="d3_D.jpg" alt="" loading="lazy"><figcaption><span class="chip">D</span> Dining · Tap Claim</figcaption></figure>
+    <figure><img src="d3_E.jpg" alt="" loading="lazy"><figcaption><span class="chip">E</span> Commute · Surge</figcaption></figure>
+  </div></div>
+</div></section>
+
+<!-- PART 4 -->
+<section class="part" id="storyboard"><div class="wrap">
+  <div class="head"><div class="label">Part 4 · Video storyboard</div><h2>Six frames: Saturday, 7:02 AM</h2>
+    <p class="muted">The couple concept as a 40 second vertical video. The three app steps from the brief (claim, pay, earn) are carried by UI that animates over live action.</p></div>
+  <figure><img src="bts_storyboard.jpg" alt="Original 12 frame storyboard" loading="lazy"><figcaption><b>Original storyboard, 12 frames.</b> Written and boarded by me before generating any video: the realization, out the door, the hose, the chase, the car in sight, mission complete.</figcaption></figure>
+  <div class="label" style="margin-top:8px">The final edit in six frames</div>
+  <div class="sb">
+    <figure><img src="sb1.jpg" alt="Frame 1" loading="lazy"><div class="n">Frame 1 · Setup</div><dl><dt>What happens</dt><dd>She stares out of the window with her coffee. Through the glass, Dave is backing out to fill up.</dd><dt>Copy</dt><dd>"Saturday · 7:02 AM"</dd><dt>Visual idea</dt><dd>Rollers, robe and pure panic. A tracked label follows the car: "Dave's off to fill up".</dd></dl></figure>
+    <figure><img src="sb2.jpg" alt="Frame 2" loading="lazy"><div class="n">Frame 2 · Hook</div><dl><dt>What happens</dt><dd>Extreme close up of her face as she realises.</dd><dt>Copy</dt><dd>"Without Upside?"</dd><dt>Visual idea</dt><dd>Blue and Pulse type blocks punch in on the beat.</dd></dl></figure>
+    <figure><img src="sb3.jpg" alt="Frame 3" loading="lazy"><div class="n">Frame 3 · Claim</div><dl><dt>What happens</dt><dd>She claims the offer on her phone while running out of the door.</dd><dt>Copy</dt><dd>"1 Claim an offer" · "Up to 25¢/gal cash back"</dd><dt>Visual idea</dt><dd>Offer notification, then the claim card taps to "Claimed".</dd></dl></figure>
+    <figure><img src="sb4.jpg" alt="Frame 4" loading="lazy"><div class="n">Frame 4 · Chase</div><dl><dt>What happens</dt><dd>She jumps on a skateboard, coffee in hand, and races to the station.</dd><dt>Copy</dt><dd>Map card: "Shell · up to 25¢/gal · 3 min"</dd><dt>Visual idea</dt><dd>A mini map with a live ETA. The comic peak of the film.</dd></dl></figure>
+    <figure><img src="sb5.jpg" alt="Frame 5" loading="lazy"><div class="n">Frame 5 · Earn</div><dl><dt>What happens</dt><dd>At the pump Dave pays like always. She shows him the phone and he lights up.</dd><dt>Copy</dt><dd>"2 Pay like always" · "3 Earn cash back" · "You earned $4.50 · No receipts needed"</dd><dt>Visual idea</dt><dd>A counter rolls from $0.00 to $4.50 and lands with a bounce.</dd></dl></figure>
+    <figure><img src="sb6.jpg" alt="Frame 6" loading="lazy"><div class="n">Frame 6 · Vow and end card</div><dl><dt>What happens</dt><dd>Kinetic type closes the joke, then the end card.</dd><dt>Copy</dt><dd>"Till cash back do us part" · "Earn on gas, groceries and dinner" · "Get the free app"</dd><dt>Visual idea</dt><dd>Letters pop and fall upward. Keywords grow and settle on a Swiss grid with the wordmark.</dd></dl></figure>
+  </div>
+</div></section>
+
+<!-- PART 5 -->
+<section class="part" id="video"><div class="wrap">
+  <div class="head"><div class="label">Part 5 · Video production</div><h2>The finished film</h2></div>
+  <div class="film">
+    <video src="film.mp4" controls playsinline preload="metadata" poster="sb2.jpg"></video>
+    <div class="grid" style="gap:20px">
+      <div class="box"><h3>How it was made</h3><p>Characters and world were designed in Midjourney, prepared for animation in ChatGPT and Photoshop with a character sheet and moodboard, and animated shot by shot, mostly in Seedance through Runway, with some shots in Google's model and one in Kling. Edited by hand in Premiere, upscaled to 4K with Topaz Starlight, music in Suno and final finishing in After Effects.</p></div>
+      <div class="box"><h3>The UI layer</h3><p>All on screen UI and copy was built as code and rendered frame by frame over the film: a car tracked with OpenCV, notification, claim card, live map, the $4.50 earn counter, kinetic closer and end card. Gilmer, Inter Tight, the book wordmark and the disclaimer on every offer frame.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="part" id="behind"><div class="wrap">
+  <div class="head"><div class="label">Part 5 · Behind the film</div><h2>Building the world before the motion</h2>
+    <p class="muted">Every shot started as a still. Characters were designed in Midjourney, then locked with character sheets so the faces, wardrobe and props stay the same across three video models. Key frames were prepared in ChatGPT and Photoshop, including the app screen, before animation.</p></div>
+  <div class="grid g2">
+    <figure><img src="bts_her_sheet.jpg" alt="Character sheet for the wife" loading="lazy"><figcaption><b>Character sheet · Her.</b> Front, three quarter and profile, close up, expressions, and the props: white mug, Electric Blue board with Pulse green wheels.</figcaption></figure>
+    <figure><img src="bts_dave_sheet.jpg" alt="Character sheet for Dave" loading="lazy"><figcaption><b>Character sheet · Dave.</b> Outfit details, six expressions and the setting, so he reads the same in every shot.</figcaption></figure>
+    <figure><img src="bts_keyframes.jpg" alt="Key frames with the Upside app" loading="lazy"><figcaption><b>Key frames.</b> The ride, the claim moment and the app screen with the Claim button, prepared as stills for animation.</figcaption></figure>
+    <figure><img src="bts_world.jpg" alt="Suburban street world reference" loading="lazy"><figcaption><b>World.</b> A sunny American suburb as the location reference for every outdoor shot.</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- PART 6 -->
+<section class="part" id="hooks"><div class="wrap">
+  <div class="head"><div class="label">Part 6 · Video hooks</div><h2>Three openings to test</h2>
+    <p class="muted">The final film, three different first seconds. Each tests a different reason to stop scrolling. The previews show the first 9 seconds.</p></div>
+  <div class="grid g3 hooks">
+    <figure><video src="hook_A.mp4" poster="sb1.jpg" controls muted playsinline preload="metadata"></video><figcaption><b>Hook A · The stare.</b> Opens on her face and "Saturday · 7:02 AM". Tests curiosity and character.</figcaption></figure>
+    <figure><video src="hook_B.mp4" poster="sb5.jpg" controls muted playsinline preload="metadata"></video><figcaption><b>Hook B · Flash forward.</b> Opens on the $4.50 earn moment, then rewinds to the morning. Tests reward first.</figcaption></figure>
+    <figure><video src="hook_C.mp4" poster="hookC.jpg" controls muted playsinline preload="metadata"></video><figcaption><b>Hook C · The vow.</b> Opens on the kinetic line "Till cash back do us part". Tests the joke and the brand line first.</figcaption></figure>
+  </div>
+</div></section>
+
+<!-- PROCESS -->
+<section class="part" id="process"><div class="wrap">
+  <div class="head"><div class="label">Process notes</div><h2>How I got there</h2></div>
+
+  <h3>Tools and why</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Tool</th><th>Used for</th><th>Why this tool</th></tr></thead>
+    <tbody>
+      <tr><td>Claude</td><td>Brief cracking, creative research, a custom Upside brand skill, UI animation over the film, statics, variations, motion piece, brand audits</td><td>One agent that reads the brand book and writes the code, so every frame is built from the real fonts, logo and colour values and can be checked by measurement</td></tr>
+      <tr><td>Midjourney</td><td>Characters and world design</td><td>Strongest control of look and casting for a believable, saturated "real people" style</td></tr>
+      <tr><td>ChatGPT + Photoshop</td><td>Image creation for the static ads with Claude, compositing the photography banners in Photoshop, fixing and preparing stills for animation, character sheet, moodboard, script polish</td><td>Fast precise edits on single frames before they go to video</td></tr>
+      <tr><td>Seedance via Runway</td><td>Most of the animated shots</td><td>Best character consistency and motion for comedic physical action</td></tr>
+      <tr><td>Google video model</td><td>Selected shots</td><td>Better results on specific camera moves and lighting</td></tr>
+      <tr><td>Kling</td><td>One shot</td><td>Handled the action that the others could not</td></tr>
+      <tr><td>Premiere</td><td>Edit</td><td>Frame accurate comedic timing</td></tr>
+      <tr><td>After Effects</td><td>Final finishing of the film</td><td>Polish, music sync and last fixes on the master</td></tr>
+      <tr><td>Suno</td><td>Music</td><td>An original track timed to the edit</td></tr>
+      <tr><td>Topaz Starlight</td><td>4K upscale</td><td>The generated film was 480×854; overlays need a sharp plate</td></tr>
+      <tr><td>Playwright, ffmpeg, OpenCV</td><td>Frame rendering, compositing, car tracking, hooks</td><td>Pixel exact control and repeatable renders</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Key prompts</h3>
+  <div class="grid g2">
+    <figure style="grid-column:1/-1"><figcaption><b>Main character (Midjourney)</b></figcaption><pre>Ultra-photorealistic cinematic fashion casting portrait of an effortlessly chic 35-year-old American woman, a charismatic fashion guru with the confident attitude of a high-end fashion editor.
+Striking but natural facial features, expressive almond-shaped brown eyes, defined cheekbones, full lips, beautifully groomed eyebrows, luminous realistic skin, rich brunette hair styled in large colorful vintage hair rollers.
+She wears a luxurious powder-blue silk dressing gown with elegant tailoring, delicate gold jewelry, oversized glamorous sunglasses resting on her head, and a perfectly coordinated pajama set underneath.
+She holds a white takeaway coffee cup with casual confidence.
+Her expression is cool, intelligent, subtly amused and completely self-assured. She radiates the energy of a woman who could turn an ordinary suburban driveway into a Paris Fashion Week runway.
+A beautiful upscale American suburban home in the softly blurred background, early morning natural sunlight, sophisticated contemporary fashion editorial photography combined with grounded Hollywood action-comedy realism.
+Medium portrait, 50mm lens, f/2.8, realistic skin pores, subtle film grain, premium wardrobe textures, cinematic color grading, believable human proportions, no exaggerated facial features, no cartoon, no illustration, no text, no watermark, 16:9.</pre></figure>
+    <figure style="grid-column:1/-1"><figcaption><b>Film shot 01 · The Realization (Seedance, written with ChatGPT)</b> The opening, kitchen window and the departing SUV. Focus: cinematic direction, performance and shot continuity.</figcaption><details class="pd"><summary>Show the full prompt</summary><pre>Create a 10-second, ultra-photorealistic live-action opening sequence for a fast-paced Hollywood action-comedy commercial.
+
+Use the provided character and environment references.
+
+Preserve the woman&#x27;s EXACT facial identity, dark brunette hair with colorful rollers, dusty-pink terry bathrobe, plain white cotton shirt, long cream pajama trousers and simple flat pink house slippers.
+
+LOCATION: An authentic suburban family home in Minnesota on an early-summer morning. Natural daylight, mature trees, green lawns and a quiet residential street.
+
+SHOT 1 | 0:00–0:03 | THE INTERRUPTION
+
+Medium close-up, 50mm lens.
+
+The woman stands near the kitchen window, holding a plain white ceramic coffee mug in her LEFT hand.
+
+As she raises the mug toward her mouth, she hears her husband&#x27;s car starting outside.
+
+Her eyes dart toward the window. She turns her head quickly, interrupted mid-sip.
+
+A short, controlled camera push-in captures the sudden change in her expression.
+
+HARD CUT.
+
+SHOT 2 | 0:03–0:05 | THE DEPARTURE
+
+Dynamic POV through the kitchen window.
+
+A dark gray family SUV is pulling out of the driveway.
+
+The camera reacts with a quick, natural pan, following the departing vehicle.
+
+Realistic vehicle acceleration, wheel rotation and suspension movement.
+
+HARD CUT.
+
+SHOT 3 | 0:05–0:10 | THE REALIZATION
+
+Tight close-up, 85mm lens.
+
+The woman realizes her husband is about to buy gas without claiming their Upside offer first.
+
+Her expression shifts instantly from relaxed to focused.
+
+She lowers the mug, mutters a quick &quot;No, no, no,&quot; then spins away from the window and rushes toward the front door.
+
+The camera follows with an energetic whip pan and short handheld tracking movement.
+
+She nearly clips a chair, makes an instinctive sidestep and continues without slowing down.
+
+CAMERA AND PERFORMANCE:
+
+Precise, energetic Hollywood action-comedy cinematography.
+
+Fast, spontaneous human movement with believable weight and momentum.
+
+Natural camera reactions, realistic motion blur, sharp motivated cuts.
+
+No robotic gestures, exaggerated expressions, floating camera movements or slow motion.
+
+CONTINUITY:
+
+The coffee mug remains in her LEFT hand. Her smartphone stays in her bathrobe pocket.
+
+Preserve her exact identity and wardrobe throughout.
+
+Vertical 9:16. Premium cinematic realism.</pre></details></figure>
+    <figure style="grid-column:1/-1"><figcaption><b>Film shot 02 · The Water Jump (Seedance, written with ChatGPT)</b> The skateboard ollie over the sprinkler. Focus: action choreography, motion physics and visual comedy.</figcaption><details class="pd"><summary>Show the full prompt</summary><pre>Continue directly from the previous skateboard chase as a single continuous, ultra-photorealistic Hollywood action-comedy sequence.
+
+DURATION: 10 seconds.
+FORMAT: Vertical 9:16.
+
+Preserve the woman&#x27;s EXACT facial identity, colorful hair rollers, dusty-pink terry bathrobe, white cotton shirt, long cream pajama trousers and flat pink slippers.
+
+She rides the same Electric Blue skateboard with mint-green wheels and carries a white ceramic coffee mug in her LEFT hand.
+
+LOCATION: A leafy residential neighborhood in Minnesota, early-summer morning.
+
+ACTION:
+
+0:00–0:02 | THE APPROACH
+
+The woman charges forward with real speed and determination.
+
+She gives one powerful push with her RIGHT foot, places it back on the board and leans into the ride.
+
+Her knees flex, shoulders shift and bathrobe flutters naturally.
+
+The camera races alongside her, low to the ground.
+
+0:02–0:04 | THE OBSTACLE
+
+A neighbor watering his front lawn accidentally sweeps a stream of water across the sidewalk.
+
+She spots the obstacle at the last possible moment.
+
+Her eyes sharpen. She drops her center of gravity, bends both knees and prepares to jump.
+
+The neighbor recoils in surprise.
+
+0:04–0:06 | THE JUMP
+
+In one explosive, physically coordinated motion, she performs a quick skateboard ollie over the water stream.
+
+Both feet remain planted on the board.
+
+Her free RIGHT arm extends outward for balance.
+
+The sudden movement makes a small amount of coffee rise out of the mug in a realistic airborne arc.
+
+For one thrilling instant, the woman, skateboard and coffee are airborne together.
+
+No floating or slow motion.
+
+0:06–0:08 | THE LANDING
+
+She lands firmly on all four wheels.
+
+Her knees absorb the impact naturally.
+
+She instinctively adjusts the mug beneath the falling coffee so that most of the liquid returns to the cup through gravity and hand movement.
+
+A few droplets escape.
+
+The skateboard continues rolling rapidly.
+
+0:08–0:10 | THE PAYOFF
+
+She straightens up and gives a brief, genuinely pleased, slightly smug smile.
+
+Without slowing down, she leans into her next turn and accelerates out of frame.
+
+CAMERA:
+
+28mm full-frame cinema lens.
+
+Fast, low-angle tracking camera approximately 45 cm above the ground.
+
+Reactive camera adjustment as the water enters her path.
+
+Quick natural tilt during the jump, followed by a subtle physical jolt on landing.
+
+PERFORMANCE:
+
+Athletic, spontaneous, daring and deadpan.
+
+Constant natural body movement: shoulder shifts, knee compression, weight transfers and balance corrections.
+
+PHYSICS:
+
+Realistic skateboard momentum and wheel rotation.
+
+Natural body weight, gravity, fabric movement and water interaction.
+
+The coffee must follow physically plausible motion rather than magically reversing direction.
+
+No robotic movement, impossible anatomy, floating objects, artificial water behavior or facial morphing.</pre></details></figure>
+    <figure style="grid-column:1/-1"><figcaption><b>Film shot 03 · The Last-Second Save (Seedance, written with ChatGPT)</b> The gas station save and the coffee handoff. Focus: character interaction, dialogue timing and prop continuity.</figcaption><details class="pd"><summary>Show the full prompt</summary><pre>Continue directly from the dramatic skateboard arrival at the gas station.
+
+Create a fast, spontaneous, ultra-photorealistic Hollywood action-comedy scene.
+
+DURATION: 10 seconds.
+FORMAT: Vertical 9:16.
+
+CHARACTER CONTINUITY:
+
+Preserve the woman&#x27;s EXACT established facial identity, colorful hair rollers, dusty-pink terry bathrobe, white shirt, long cream pajama trousers and flat pink slippers.
+
+Preserve the husband&#x27;s established appearance: middle-aged man with short graying hair, dark navy casual jacket, light blue shirt and dark jeans.
+
+The same dark gray SUV is parked beside the gas pump.
+
+The woman holds a normal-sized smartphone in her RIGHT hand, with its screen facing her.
+
+She holds ONE plain white ceramic mug in her LEFT hand.
+
+The mug contains a small, clearly visible amount of dark-brown coffee.
+
+ACTION:
+
+0:00–0:01.5 | BABE?!
+
+The husband hears her dramatic skateboard stop.
+
+He jolts, turns sharply and takes a small instinctive step backward.
+
+He blurts out, genuinely shocked:
+
+HUSBAND: &quot;BABE?!&quot;
+
+His reaction is immediate, surprised and unplanned.
+
+0:01.5–0:03.5 | DON&#x27;T PUMP!
+
+The woman is still energized and slightly breathless from the chase.
+
+She plants one foot firmly on the ground, leans toward him and interrupts in a single urgent burst:
+
+WIFE: &quot;NO! DON&#x27;T PUMP! WE&#x27;VE GOT UPSIDE!&quot;
+
+Her shoulders and hands move naturally with the intensity of the moment.
+
+The coffee visibly moves inside the mug as she gestures.
+
+0:03.5–0:06.5 | THE COFFEE HANDOFF
+
+Without stopping to explain, she quickly extends the coffee mug toward her husband.
+
+He instinctively reaches out and takes the SAME mug by its handle.
+
+For a brief moment, both characters touch the same object.
+
+His fingers close securely around the handle before she releases her grip.
+
+She withdraws her LEFT hand, which is now completely empty.
+
+The husband becomes the only person holding the mug.
+
+The small amount of coffee inside reacts naturally to the movement.
+
+0:06.5–0:08 | THE CLAIM
+
+She shifts her attention to her smartphone.
+
+The screen faces HER, not the camera.
+
+She makes one purposeful tap, then angles the phone slightly toward her husband.
+
+He leans forward to look.
+
+His expression begins to change from confusion to understanding.
+
+The authentic Upside app interface will be inserted during post-production.
+
+0:08–0:10 | THE PUNCHLINE
+
+His expression transforms into genuine admiration.
+
+He gives a brief spontaneous laugh and says:
+
+HUSBAND: &quot;You&#x27;re a genius.&quot;
+
+She responds with a tiny, satisfied smile.
+
+The moment feels affectionate, witty and completely natural.
+
+CAMERA:
+
+35mm full-frame lens.
+
+Dynamic medium two-shot with subtle handheld energy.
+
+Maintain clear visibility of both faces and the mug during the handoff.
+
+A small reactive camera adjustment follows the husband&#x27;s initial surprise.
+
+Finish with a subtle push-in on the husband&#x27;s expression.
+
+PERFORMANCE:
+
+The characters must react to each other naturally, with overlapping gestures, spontaneous eye movements and believable physical timing.
+
+Avoid synchronized acting, frozen poses, theatrical expressions and robotic movements.
+
+STRICT OBJECT CONTINUITY:
+
+Exactly ONE coffee mug exists throughout the scene.
+
+The mug physically transfers from the woman&#x27;s LEFT hand to the husband&#x27;s hand.
+
+No duplicated cups, disappearing objects, distorted fingers or impossible hand positions.
+
+The smartphone remains realistically proportioned.
+
+VISUAL STYLE:
+
+Authentic suburban Minnesota gas station, natural early-summer morning light and restrained brand-blue environmental accents.
+
+Real human skin texture, natural fabric movement and subtle cinematic film grain.</pre></details></figure>
+    <figure><figcaption><b>Brand skill (to Claude)</b></figcaption><pre>Before we start the creative, build me a careful and precise skill for the brand. I'll attach the font, the brand book and the brief. Put into the skill After Effects knowledge you find online.</pre></figure>
+    <figure><figcaption><b>Motion direction (to Claude)</b></figcaption><pre>More interest, it feels like a presentation. Change top and bottom, one slide closes and the next starts with a word that grows and shrinks. Like After Effects, young, pop, dynamic, fun, colours change, all within the brand.</pre></figure>
+  </div>
+
+  <h3>Iterations</h3>
+  <div class="ba">
+    <div class="box"><div class="label">Logo</div><p class="from">First: the logo from the website, with the U icon locked up next to the wordmark.</p><p>Kept: the wordmark file extracted from the brand book, never locked up with the icon, in approved colourways only. Checked at 96 to 98% pixel match.</p></div>
+    <div class="box"><div class="label">Statics</div><p class="from">First: photo crops from the film with heavy colour blocks. The 480p source looked soft and the blocks felt heavy.</p><p>Kept: a clean Swiss grid with Upside's own illustration library, two type sizes, and one Pulse accent.</p></div>
+    <div class="box"><div class="label">Photography banners</div><p class="from">First: automatic cutouts of her from the film. Edges looked cut out and pasted on.</p><p>Kept: the layout built as code with an open photo card, and every frame composited by hand in Photoshop so the photo and the type sit together.</p></div>
+    <div class="box"><div class="label">Illustration</div><p class="from">First: new figures drawn by hand in vector. They looked stiff and off brand.</p><p>Kept: only figures from Upside's illustration library, recoloured for dark backgrounds, so every character comes from the same illustrator.</p></div>
+    <div class="box"><div class="label">Motion</div><p class="from">First: a camera pan across the slides. It felt like a presentation.</p><p>Kept: kinetic word beats, iris reveals, colour band wipes, and a skater and a car that pull the thread into the next scene.</p></div>
+  </div>
+
+  <h3>Problems and fixes</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Low resolution film</td><td>The generated film was 480×854. Upscaled to 4K in Topaz Starlight before compositing the UI.</td></tr>
+      <tr><td>Cut points moved between versions</td><td>Each recut shifted the shots by fractions of a second. Scene detection on both versions, then the overlay timeline was remapped cut by cut.</td></tr>
+      <tr><td>Wrong logo and font weight</td><td>Audit against the book found the website icon and Gilmer Bold. Replaced with book files and Gilmer Medium, UI in Inter Tight, tracking −20 everywhere.</td></tr>
+      <tr><td>Rough cutouts</td><td>Background removal broke motion blurred hands. Switched to framed photos with a head pop out, then to the illustration library.</td></tr>
+      <tr><td>Dash like marks in the motion</td><td>Elements that scaled up from zero looked like thin lines for a frame. They now fade in only at real size; every entrance checked frame by frame.</td></tr>
+      <tr><td>Waving arm detached</td><td>The cut arm rotated around the wrong pivot and left a smear. Replaced with a gentle sway of the whole figure.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Time per part</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Part</th><th>Time</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Part 1 · Platform</td><td class="num">3 h</td><td>Brief, brand book, site and competitor research, concept routes</td></tr>
+      <tr><td>Part 2 · Static ads</td><td class="num">Longest part</td><td>Image creation took the most time of the whole project, largely with Claude and ChatGPT: three directions, brand audits and the illustration work</td></tr>
+      <tr><td>Part 3 · Variations</td><td class="num">10 h</td><td>Together with Part 6: variation engine, copy testing plan, brand checks and review</td></tr>
+      <tr><td>Part 4 · Storyboard</td><td class="num">1.5 h</td><td>Script and storyboard</td></tr>
+      <tr><td>Part 5 · Video</td><td class="num">16 h</td><td>12+ h film generation and edit, then UI animation, music and After Effects finishing</td></tr>
+      <tr><td>Part 6 · Hooks</td><td class="num">incl. in Part 3</td><td>Three openings cut from the master</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>With paid tools</h3>
+  <div class="grid g3">
+    <div class="box"><p>Train a character model of the couple so every shot keeps the same faces, and generate natively in 4K instead of upscaling.</p></div>
+    <div class="box"><p>Finish the UI layer in After Effects with the brand skill's scripts, export Lottie files for the app team, and add a licensed voice over.</p></div>
+    <div class="box"><p>Run the variation engine into a creative testing tool and let real performance data pick the next round of hooks and colourways.</p></div>
+  </div>
+</div></section>
+
+<!-- DOWNLOADS -->
+<section class="part" id="downloads"><div class="wrap">
+  <div class="head"><div class="label">Downloads</div><h2>All the deliverables, ready to download</h2>
+    <p class="muted">Every file requested in the brief, packed by part. All statics are 1080 × 1080 PNG.</p></div>
+  <div class="grid g3">
+    <div class="box dl"><div class="label">Part 1 and process notes</div><div class="big">Full overview</div><ul><li>Campaign platform</li><li>Tools, prompts, iterations, time per part</li><li>Every part on one PDF</li></ul><a class="go" href="Upside_Submission_Overview.pdf" download style="text-decoration:none">Download PDF · 2.6 MB</a></div>
+    <div class="box dl"><div class="label">Part 2</div><div class="big">Static ads</div><ul><li>Ad 1 · Photography</li><li>Ad 2 · Typography</li><li>Ad 3 · Vector</li><li>Bonus · vector motion (MP4)</li></ul><a class="go" href="Upside_Part2_Static_Ads.zip" download style="text-decoration:none">Download ZIP · 4.4 MB</a></div>
+    <div class="box dl"><div class="label">Part 3</div><div class="big">15 variations</div><ul><li>Photography A to E</li><li>Typography A to E</li><li>Vector A to E</li></ul><a class="go" href="Upside_Part3_Variations.zip" download style="text-decoration:none">Download ZIP · 5.3 MB</a></div>
+    <div class="box dl"><div class="label">Part 4</div><div class="big">Storyboard</div><ul><li>12 frame storyboard</li><li>6 key frames from the film</li></ul><a class="go" href="Upside_Part4_Storyboard.zip" download style="text-decoration:none">Download ZIP · 0.7 MB</a></div>
+    <div class="box dl"><div class="label">Part 5</div><div class="big">The film</div><ul><li>Upside, final cut with music</li><li>9:16 MP4</li></ul><a class="go" href="Upside_Part5_Film_Talia_Naiman.mp4" download style="text-decoration:none">Download MP4 · 9.9 MB</a></div>
+    <div class="box dl"><div class="label">Part 6</div><div class="big">Video hooks</div><ul><li>Hook A · The stare</li><li>Hook B · Flash forward</li><li>Hook C · The vow</li></ul><a class="go" href="Upside_Part6_Hooks.zip" download style="text-decoration:none">Download ZIP · 3.8 MB</a></div>
+    </div>
+  <div class="dlall"><a class="go" href="Upside_Talia_Naiman_Submission.zip" download style="text-decoration:none">Download everything · ZIP · 24 MB</a></div>
+</div></section>
+
+
+<footer><div class="wrap"><span>Talia Naiman · AI Design Lead home assignment for Moburst</span><span>Offers vary by user and location.</span></div></footer>
