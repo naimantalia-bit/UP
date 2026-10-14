@@ -104,6 +104,19 @@ pre{margin:0;white-space:pre-wrap;font:400 14px/1.55 ui-monospace,SFMono-Regular
 .dl ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
 details.pd summary{cursor:pointer;font:500 15px var(--body);color:var(--blue);padding:6px 0}
 details.pd[open] summary{margin-bottom:8px}
+button.phone{border:0;padding:0;cursor:pointer;display:block;font:inherit}
+.film-poster img{width:100%;height:100%;object-fit:cover;display:block}
+.playbtn{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;background:#0047FF;color:#F6F5F2;font:500 15px var(--body);letter-spacing:-0.02em;padding:10px 18px 10px 14px;border-radius:999px;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);transition:transform .15s}
+.playbtn svg{width:18px;height:18px;fill:currentColor}
+button.phone:hover .playbtn{transform:translateX(-50%) scale(1.05)}
+.fm{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:rgba(0,20,0,.82);backdrop-filter:blur(8px);padding:16px}
+.fm.on{display:flex}
+.fm .device{position:relative;height:min(88vh,860px);background:#0b0b0b;border-radius:48px;padding:12px;box-shadow:0 0 0 2px #2a2a2a,0 40px 80px -20px rgba(0,0,0,.7)}
+.fm .screen{position:relative;height:100%;aspect-ratio:9/16;max-width:calc(100vw - 56px);border-radius:38px;overflow:hidden;background:#000;display:flex;align-items:center}
+.fm .screen video{width:100%;height:100%;object-fit:contain;display:block}
+.fm .island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:28%;height:22px;background:#000;border-radius:20px;z-index:2;pointer-events:none}
+.fm .x{position:absolute;top:16px;right:16px;z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:#F6F5F2;color:#001400;font:500 22px/1 var(--body);cursor:pointer}
+@media (max-width:600px){.fm{padding:0}.fm .device{height:100%;width:100%;border-radius:0;padding:0;box-shadow:none;background:#000;display:flex;align-items:center;justify-content:center}.fm .screen{border-radius:0;height:auto;width:100%;max-width:100%;max-height:100%}.fm .island{display:none}}
 footer{border-top:1px solid var(--line)}
 footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;font-size:14px;color:var(--muted)}
 
@@ -148,7 +161,7 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
       <p class="lede">A campaign for Upside about the everyday couple who never miss a chance to earn. Six parts, from the big idea to the final video, plus the process behind every choice.</p>
       <div class="meta"><span><b>Talia Naiman</b></span><span>Client: Upside</span><span>October 2026</span></div>
     </div>
-    <div class="phone"><video src="film.mp4" poster="sb1.jpg" autoplay muted loop playsinline controls aria-label="The film"></video></div>
+    <button type="button" class="phone open-film" aria-label="Play the film with sound"><video src="film.mp4" poster="sb1.jpg" autoplay muted loop playsinline aria-hidden="true" tabindex="-1"></video><span class="playbtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch with sound</span></button>
   </div>
 </header>
 
@@ -230,7 +243,7 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
 <section class="part" id="video"><div class="wrap">
   <div class="head"><div class="label">Part 5 · Video production</div><h2>The finished film</h2></div>
   <div class="film">
-    <video src="film.mp4" controls playsinline preload="metadata" poster="sb2.jpg"></video>
+    <button type="button" class="phone open-film film-poster" aria-label="Play the film"><img src="sb2.jpg" alt=""><span class="playbtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Play the film</span></button>
     <div class="grid" style="gap:20px">
       <div class="box"><h3>How it was made</h3><p>Characters and world were designed in Midjourney, prepared for animation in ChatGPT and Photoshop with a character sheet and moodboard, and animated shot by shot, mostly in Seedance through Runway, with some shots in Google's model and one in Kling. Edited by hand in Premiere, upscaled to 4K with Topaz Starlight, music in Suno and final finishing in After Effects.</p></div>
       <div class="box"><h3>The UI layer</h3><p>All on screen UI and copy was built as code and rendered frame by frame over the film: a car tracked with OpenCV, notification, claim card, live map, the $4.50 earn counter, kinetic closer and end card. Gilmer, Inter Tight, the book wordmark and the disclaimer on every offer frame.</p></div>
@@ -608,10 +621,11 @@ Real human skin texture, natural fabric movement and subtle cinematic film grain
   </table></div>
 
   <h3>With paid tools</h3>
-  <div class="grid g3">
+  <div class="grid g2">
     <div class="box"><p>Train a character model of the couple so every shot keeps the same faces, and generate natively in 4K instead of upscaling.</p></div>
     <div class="box"><p>Finish the UI layer in After Effects with the brand skill's scripts, export Lottie files for the app team, and add a licensed voice over.</p></div>
     <div class="box"><p>Run the variation engine into a creative testing tool and let real performance data pick the next round of hooks and colourways.</p></div>
+    <div class="box"><p>More generation credits and editing tools to test several takes of every shot, then refine inside the film itself: regenerate a single moment, fix hands or props in a shot, and change details without rebuilding the whole scene.</p></div>
   </div>
 </div></section>
 
@@ -631,4 +645,13 @@ Real human skin texture, natural fabric movement and subtle cinematic film grain
 </div></section>
 
 
+<div class="fm" id="fm" role="dialog" aria-modal="true" aria-label="The film"><button type="button" class="x" aria-label="Close">&times;</button><div class="device"><div class="island"></div><div class="screen"><video id="fmv" src="film.mp4" playsinline controls preload="none" poster="sb1.jpg"></video></div></div></div>
+<script>
+(()=>{const fm=document.getElementById("fm"),v=document.getElementById("fmv");let last=null;
+function open(e){last=e.currentTarget;fm.classList.add("on");document.body.style.overflow="hidden";v.currentTime=0;v.muted=false;v.play().catch(()=>{});fm.querySelector(".x").focus()}
+function close(){v.pause();fm.classList.remove("on");document.body.style.overflow="";if(last)last.focus()}
+document.querySelectorAll(".open-film").forEach(b=>b.addEventListener("click",open));
+fm.addEventListener("click",e=>{if(e.target===fm||e.target.classList.contains("x"))close()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&fm.classList.contains("on"))close()});})();
+</script>
 <footer><div class="wrap"><span>Talia Naiman · AI Design Lead home assignment for Moburst</span><span>Offers vary by user and location.</span></div></footer>
