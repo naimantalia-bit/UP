@@ -104,14 +104,14 @@ pre{margin:0;white-space:pre-wrap;font:400 14px/1.55 ui-monospace,SFMono-Regular
 .dl ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
 details.pd summary{cursor:pointer;font:500 15px var(--body);color:var(--blue);padding:6px 0}
 details.pd[open] summary{margin-bottom:8px}
-button.phone{border:0;padding:0;cursor:pointer;display:block;font:inherit}
-.film-poster img{width:100%;height:100%;object-fit:cover;display:block}
+button.phone{border:0;padding:8px;cursor:pointer;display:block;font:inherit;background:#0047FF}
+.film-poster img{width:100%;height:100%;object-fit:cover;display:block;border-radius:21px}
 .playbtn{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;background:#0047FF;color:#F6F5F2;font:500 15px var(--body);letter-spacing:-0.02em;padding:10px 18px 10px 14px;border-radius:999px;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);transition:transform .15s}
 .playbtn svg{width:18px;height:18px;fill:currentColor}
 button.phone:hover .playbtn{transform:translateX(-50%) scale(1.05)}
 .fm{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:rgba(0,20,0,.82);backdrop-filter:blur(8px);padding:16px}
 .fm.on{display:flex}
-.fm .device{position:relative;height:min(88vh,860px);background:#0b0b0b;border-radius:48px;padding:12px;box-shadow:0 0 0 2px #2a2a2a,0 40px 80px -20px rgba(0,0,0,.7)}
+.fm .device{position:relative;height:min(88vh,860px);background:#0047FF;border-radius:48px;padding:12px;box-shadow:0 0 0 2px #2F6BFF inset,0 40px 80px -20px rgba(0,0,0,.7)}
 .fm .screen{position:relative;height:100%;aspect-ratio:9/16;max-width:calc(100vw - 56px);border-radius:38px;overflow:hidden;background:#000;display:flex;align-items:center}
 .fm .screen video{width:100%;height:100%;object-fit:contain;display:block}
 .fm .island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:28%;height:22px;background:#000;border-radius:20px;z-index:2;pointer-events:none}
@@ -161,7 +161,7 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
       <p class="lede">A campaign for Upside about the everyday couple who never miss a chance to earn. Six parts, from the big idea to the final video, plus the process behind every choice.</p>
       <div class="meta"><span><b>Talia Naiman</b></span><span>Client: Upside</span><span>October 2026</span></div>
     </div>
-    <button type="button" class="phone open-film" aria-label="Play the film with sound"><video src="film.mp4" poster="sb1.jpg" autoplay muted loop playsinline aria-hidden="true" tabindex="-1"></video><span class="playbtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch with sound</span></button>
+    <button type="button" class="phone open-film film-poster" aria-label="Play the film with sound"><img src="sb1.jpg" alt=""><span class="playbtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch with sound</span></button>
   </div>
 </header>
 
@@ -267,9 +267,9 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
   <div class="head"><div class="label">Part 6 · Video hooks</div><h2>Three openings to test</h2>
     <p class="muted">The final film, three different first seconds. Each tests a different reason to stop scrolling. The previews show the first 9 seconds.</p></div>
   <div class="grid g3 hooks">
-    <figure><video src="hook_A.mp4" poster="sb1.jpg" controls muted playsinline preload="metadata"></video><figcaption><b>Hook A · The stare.</b> Opens on her face and "Saturday · 7:02 AM". Tests curiosity and character.</figcaption></figure>
-    <figure><video src="hook_B.mp4" poster="sb5.jpg" controls muted playsinline preload="metadata"></video><figcaption><b>Hook B · Flash forward.</b> Opens on the $4.50 earn moment, then rewinds to the morning. Tests reward first.</figcaption></figure>
-    <figure><video src="hook_C.mp4" poster="hookC.jpg" controls muted playsinline preload="metadata"></video><figcaption><b>Hook C · The vow.</b> Opens on the kinetic line "Till cash back do us part". Tests the joke and the brand line first.</figcaption></figure>
+    <figure><video src="hook_A.mp4" poster="sb1.jpg" controls playsinline preload="metadata"></video><figcaption><b>Hook A · The stare.</b> Opens on her face and "Saturday · 7:02 AM". Tests curiosity and character.</figcaption></figure>
+    <figure><video src="hook_B.mp4" poster="sb5.jpg" controls playsinline preload="metadata"></video><figcaption><b>Hook B · Flash forward.</b> Opens on the $4.50 earn moment, then rewinds to the morning. Tests reward first.</figcaption></figure>
+    <figure><video src="hook_C.mp4" poster="hookC.jpg" controls playsinline preload="metadata"></video><figcaption><b>Hook C · The vow.</b> Opens on the kinetic line "Till cash back do us part". Tests the joke and the brand line first.</figcaption></figure>
   </div>
 </div></section>
 
@@ -612,7 +612,7 @@ Real human skin texture, natural fabric movement and subtle cinematic film grain
     <thead><tr><th>Part</th><th>Time</th><th>Notes</th></tr></thead>
     <tbody>
       <tr><td>Part 1 · Platform</td><td class="num">3 h</td><td>Brief, brand book, site and competitor research, concept routes</td></tr>
-      <tr><td>Part 2 · Static ads</td><td class="num">Longest part</td><td>Image creation took the most time of the whole project, largely with Claude and ChatGPT: three directions, brand audits and the illustration work</td></tr>
+      <tr><td>Part 2 · Static ads</td><td class="num">4 h</td><td>Image creation, largely with Claude and ChatGPT, plus Photoshop compositing: three directions, brand audits and the illustration work</td></tr>
       <tr><td>Part 3 · Variations</td><td class="num">10 h</td><td>Together with Part 6: variation engine, copy testing plan, brand checks and review</td></tr>
       <tr><td>Part 4 · Storyboard</td><td class="num">1.5 h</td><td>Script and storyboard</td></tr>
       <tr><td>Part 5 · Video</td><td class="num">16 h</td><td>12+ h film generation and edit, then UI animation, music and After Effects finishing</td></tr>
