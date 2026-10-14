@@ -7,8 +7,8 @@
    a thin Pulse thread that runs through the hero the way it runs through the ads. Parts follow the assignment order. */
 @font-face{font-family:"Gilmer";src:url("gilmer-medium.otf") format("opentype");font-weight:500;font-display:swap}
 :root{
-  --bg:#F6F5F2; --surface:#FFFFFF; --ink:#001400; --muted:#4A5A55; --line:#E2E1DC;
-  --blue:#0047FF; --pulse:#67F3B9; --surge:#1E4B42; --swell:#D5D7FC; --on-blue:#F6F5F2;
+  --bg:#07120F; --surface:#0E1C18; --ink:#F6F5F2; --muted:#A9B8B2; --line:#1F332D;
+  --blue:#5C86FF; --pulse:#67F3B9; --surge:#2C6A5D; --swell:#232B55; --on-blue:#F6F5F2; color-scheme:dark;
   --display:"Gilmer","Poppins",Arial,sans-serif; --body:"Inter Tight",Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
@@ -37,9 +37,7 @@ nav.top img{height:22px;width:auto;flex:none}
 nav.top .links{display:flex;gap:6px;flex-wrap:nowrap}
 nav.top a{text-decoration:none;color:var(--ink);font:500 14px var(--body);padding:6px 12px;border-radius:999px;white-space:nowrap}
 nav.top a:hover{background:var(--swell)}
-.wm-dark{display:none}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .wm-light{display:none}:root:not([data-theme="light"]) .wm-dark{display:block}}
-:root[data-theme="dark"] .wm-light{display:none}:root[data-theme="dark"] .wm-dark{display:block}
+.wm-light{display:none}
 
 /* hero */
 .hero{position:relative;overflow:hidden}
