@@ -146,7 +146,7 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
     <img class="wm-dark" src="wordmark-white.png" alt="upside">
     <div class="links">
       <a href="#video">Video</a><a href="#platform">Platform</a><a href="#statics">Static ads</a><a href="#variations">Variations</a>
-      <a href="#storyboard">Storyboard</a><a href="#behind">Behind the film</a><a href="#hooks">Hooks</a><a href="#process">Process</a>
+      <a href="#storyboard">Storyboard</a><a href="#behind">Behind the film</a><a href="#hooks">Hooks</a><a href="#process">Process</a><a href="#downloads">Downloads</a>
     </div>
   </div>
 </nav>
@@ -157,7 +157,7 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
   </svg>
   <div class="wrap">
     <div>
-      <div class="label">Campaign for the UP app</div>
+      <div class="label">Moburst home assignment · AI Design Lead</div>
       <h1 style="margin-top:16px">Till <span class="mark">cash back</span> do us part</h1>
       <p class="lede">A campaign for Upside about the everyday couple who never miss a chance to earn. Six parts, from the big idea to the final video, plus the process behind every choice.</p>
       <div class="meta"><span><b>Talia Naiman</b></span><span>Client: Upside</span><span>October 2026</span></div>
@@ -596,8 +596,54 @@ Real human skin texture, natural fabric movement and subtle cinematic film grain
     <div class="box"><div class="label">Illustration</div><p class="from">First: new figures drawn by hand in vector. They looked stiff and off brand.</p><p>Kept: only figures from Upside's illustration library, recoloured for dark backgrounds, so every character comes from the same illustrator.</p></div>
     <div class="box"><div class="label">Motion</div><p class="from">First: a camera pan across the slides. It felt like a presentation.</p><p>Kept: kinetic word beats, iris reveals, colour band wipes, and a skater and a car that pull the thread into the next scene.</p></div>
   </div>
+  <h3>Problems and fixes</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+    <tbody>
+      <tr><td>Low resolution film</td><td>The generated film was 480×854. Upscaled to 4K in Topaz Starlight before compositing the UI.</td></tr>
+      <tr><td>Cut points moved between versions</td><td>Each recut shifted the shots by fractions of a second. Scene detection on both versions, then the overlay timeline was remapped cut by cut.</td></tr>
+      <tr><td>Wrong logo and font weight</td><td>Audit against the book found the website icon and Gilmer Bold. Replaced with book files and Gilmer Medium, UI in Inter Tight, tracking −20 everywhere.</td></tr>
+      <tr><td>Rough cutouts</td><td>Background removal broke motion blurred hands. Switched to framed photos with a head pop out, then to the illustration library.</td></tr>
+      <tr><td>Dash like marks in the motion</td><td>Elements that scaled up from zero looked like thin lines for a frame. They now fade in only at real size; every entrance checked frame by frame.</td></tr>
+      <tr><td>Waving arm detached</td><td>The cut arm rotated around the wrong pivot and left a smear. Replaced with a gentle sway of the whole figure.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Time per part</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Part</th><th>Time</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Part 1 · Platform</td><td class="num">3 h</td><td>Brief, brand book, site and competitor research, concept routes</td></tr>
+      <tr><td>Part 2 · Static ads</td><td class="num">4 h</td><td>Image creation, largely with Claude and ChatGPT, plus Photoshop compositing: three directions, brand audits and the illustration work</td></tr>
+      <tr><td>Part 3 · Variations</td><td class="num">5 h</td><td>Together with Part 6: variation engine, copy testing plan, brand checks and review</td></tr>
+      <tr><td>Part 4 · Storyboard</td><td class="num">1 h</td><td>Script and storyboard</td></tr>
+      <tr><td>Part 5 · Video</td><td class="num">6 h</td><td>Film generation and edit, then UI animation, music and After Effects finishing</td></tr>
+      <tr><td>Part 6 · Hooks</td><td class="num">incl. in Part 3</td><td>Three openings cut from the master</td></tr>
+    </tbody>
+  </table></div>
+  <h3>With paid tools</h3>
+  <div class="grid g2">
+    <div class="box"><p>Train a character model of the couple so every shot keeps the same faces, and generate natively in 4K instead of upscaling.</p></div>
+    <div class="box"><p>Finish the UI layer in After Effects with the brand skill's scripts, export Lottie files for the app team, and add a licensed voice over.</p></div>
+    <div class="box"><p>Run the variation engine into a creative testing tool and let real performance data pick the next round of hooks and colourways.</p></div>
+    <div class="box"><p>More generation credits and editing tools to test several takes of every shot, then refine inside the film itself: regenerate a single moment, fix hands or props in a shot, and change details without rebuilding the whole scene.</p></div>
+  </div>
 </div></section>
 
+
+
+<!-- DOWNLOADS -->
+<section class="part" id="downloads"><div class="wrap">
+  <div class="head"><div class="label">Downloads</div><h2>All the deliverables, ready to download</h2>
+    <p class="muted">Every file requested in the brief, by part. Click a file to download it. All statics are 1080 × 1080 PNG.</p></div>
+  <div class="grid g3">
+    <div class="box dl"><div class="label">Part 1 and process notes</div><div class="big">Full overview</div><ul><li>Campaign platform</li><li>Tools, prompts, iterations, time per part</li><li>Every part on one PDF</li></ul><a class="go" href="Upside_Submission_Overview.pdf" download style="text-decoration:none">Download PDF · 2.6 MB</a></div>
+    <div class="box dl"><div class="label">Part 2</div><div class="big">Static ads</div><ul class="files"><li><a href="Ad1_Photography.png" download>Ad 1 · Photography</a></li><li><a href="Ad2_Typography.png" download>Ad 2 · Typography</a></li><li><a href="Ad3_Vector.png" download>Ad 3 · Vector</a></li><li><a href="Bonus_Vector_Motion.mp4" download>Bonus · vector motion (MP4)</a></li></ul></div>
+    <div class="box dl"><div class="label">Part 3</div><div class="big">15 variations</div><ul class="files"><li>Photography <a href="Photo_A.png" download>A</a> <a href="Photo_B.png" download>B</a> <a href="Photo_C.png" download>C</a> <a href="Photo_D.png" download>D</a> <a href="Photo_E.png" download>E</a></li><li>Typography <a href="Type_A.png" download>A</a> <a href="Type_B.png" download>B</a> <a href="Type_C.png" download>C</a> <a href="Type_D.png" download>D</a> <a href="Type_E.png" download>E</a></li><li>Vector <a href="Vector_A.png" download>A</a> <a href="Vector_B.png" download>B</a> <a href="Vector_C.png" download>C</a> <a href="Vector_D.png" download>D</a> <a href="Vector_E.png" download>E</a></li></ul></div>
+    <div class="box dl"><div class="label">Part 4</div><div class="big">Storyboard</div><ul class="files"><li><a href="Storyboard_12_frames.jpg" download>12 frame storyboard</a></li><li>Key frames <a href="Frame_1.jpg" download>1</a> <a href="Frame_2.jpg" download>2</a> <a href="Frame_3.jpg" download>3</a> <a href="Frame_4.jpg" download>4</a> <a href="Frame_5.jpg" download>5</a> <a href="Frame_6.jpg" download>6</a></li></ul></div>
+    <div class="box dl"><div class="label">Part 5</div><div class="big">The film</div><ul><li>Upside, final cut with music</li><li>9:16 MP4</li></ul><a class="go" href="Upside_Part5_Film_Talia_Naiman.mp4" download style="text-decoration:none">Download MP4 · 9.9 MB</a></div>
+    <div class="box dl"><div class="label">Part 6</div><div class="big">Video hooks</div><ul class="files"><li><a href="Hook_A_TheStare.mp4" download>Hook A · The stare</a></li><li><a href="Hook_B_FlashForward.mp4" download>Hook B · Flash forward</a></li><li><a href="Hook_C_TheVow.mp4" download>Hook C · The vow</a></li></ul></div>
+    </div>
+</div></section>
 
 
 <div class="fm" id="fm" role="dialog" aria-modal="true" aria-label="The film"><button type="button" class="x" aria-label="Close">&times;</button><div class="device"><div class="island"></div><div class="screen"><video id="fmv" src="film.mp4" playsinline controls preload="none" poster="sb1.jpg"></video></div></div></div>
