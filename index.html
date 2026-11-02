@@ -1,44 +1,48 @@
-<title>Upside Till Cash Back</title>
+<title>Till Cash Back Do Us Part | Talia Naiman</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap">
 <style>
 /* Layout: one long brand page in Upside's own language. Whitecap ground, Gilmer headlines, Pulse marker as the only flourish,
    a thin Pulse thread that runs through the hero the way it runs through the ads. */
 @font-face{font-family:"Gilmer";src:url("gilmer-medium.otf") format("opentype");font-weight:500;font-display:swap}
 :root{
-  --bg:#07120F; --surface:#0E1C18; --ink:#F6F5F2; --muted:#A9B8B2; --line:#1F332D;
-  --blue:#5C86FF; --pulse:#67F3B9; --surge:#2C6A5D; --swell:#232B55; --on-blue:#F6F5F2; color-scheme:dark;
-  --display:"Gilmer","Poppins",Arial,sans-serif; --body:"Inter Tight",Arial,sans-serif;
+  --bg:#1A1A1A; --surface:#242424; --ink:#F2EDE5; --muted:#B5ADA3; --line:#565656;
+  --blue:#1FA8BC; --pulse:#1FA8BC; --surge:#2C6A5D; --swell:#2E2E2E; --on-blue:#FFFFFF; color-scheme:dark;
+  --display:"Archivo",Arial,sans-serif; --body:"Archivo",Arial,sans-serif; --signature:"Caveat",cursive;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#07120F; --surface:#0E1C18; --ink:#F6F5F2; --muted:#A9B8B2; --line:#1F332D;
-  --blue:#5C86FF; --pulse:#67F3B9; --surge:#2C6A5D; --swell:#232B55; --on-blue:#F6F5F2; color-scheme:dark}}
+  --bg:#1A1A1A; --surface:#242424; --ink:#F2EDE5; --muted:#B5ADA3; --line:#565656;
+  --blue:#1FA8BC; --pulse:#1FA8BC; --surge:#2C6A5D; --swell:#2E2E2E; --on-blue:#FFFFFF; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#07120F; --surface:#0E1C18; --ink:#F6F5F2; --muted:#A9B8B2; --line:#1F332D;
-  --blue:#5C86FF; --pulse:#67F3B9; --surge:#2C6A5D; --swell:#232B55; --on-blue:#F6F5F2; color-scheme:dark}
+  --bg:#1A1A1A; --surface:#242424; --ink:#F2EDE5; --muted:#B5ADA3; --line:#565656;
+  --blue:#1FA8BC; --pulse:#1FA8BC; --surge:#2C6A5D; --swell:#2E2E2E; --on-blue:#FFFFFF; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);letter-spacing:-0.01em}
 .wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-0.02em;line-height:1.05;text-wrap:balance;margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-0.02em;line-height:1.05;text-wrap:balance;margin:0}
 h2{font-size:clamp(34px,5vw,56px)}
 h3{font-size:24px}
 p{margin:0;max-width:64ch}
-.mark{background:linear-gradient(transparent 52%,var(--pulse) 52%,var(--pulse) 92%,transparent 92%);color:inherit;padding:0 .08em}
+.mark{background:linear-gradient(transparent 52%,var(--pulse) 52%,var(--pulse) 92%,transparent 92%);color:#fff;padding:0 .08em}
 .label{font:600 13px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
 .muted{color:var(--muted)}
 a{color:var(--blue)}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 
 /* nav */
-nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav.top .wrap{display:flex;align-items:center;gap:20px;padding-block:12px;overflow-x:auto}
-nav.top img{height:22px;width:auto;flex:none}
-nav.top .links{display:flex;gap:6px;flex-wrap:nowrap}
-nav.top a{text-decoration:none;color:var(--ink);font:500 14px var(--body);padding:6px 12px;border-radius:999px;white-space:nowrap}
-nav.top a:hover{background:var(--swell)}
-.wm-light{display:none}
-nav.top a.back{flex:none;border:1px solid var(--line);font-weight:600}
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.top .bar{display:flex;align-items:center;gap:2.5rem;padding:0 2.6%;height:64px}
+nav.top .logo{font-family:var(--signature);font-weight:700;font-size:2rem;letter-spacing:.01em;white-space:nowrap;color:var(--blue);text-decoration:none;padding:0}
+nav.top .pf{display:flex;gap:1.9rem;margin:0 auto;font-size:.8rem;letter-spacing:.08em}
+nav.top .pf a{color:var(--ink);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;border-radius:0;font:inherit}
+nav.top .pf a:hover{color:var(--blue);background:none}
+nav.top .links{display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;padding:0 2.6% 10px;scrollbar-width:none}
+nav.top .links::-webkit-scrollbar{display:none}
+nav.top .links a{text-decoration:none;color:var(--muted);font:500 13px var(--body);padding:5px 12px;border-radius:999px;white-space:nowrap}
+nav.top .links a:hover{background:var(--swell);color:var(--ink)}
+section.part{scroll-margin-top:110px}
+@media (max-width:700px){nav.top .bar{gap:1rem;height:56px}nav.top .logo{font-size:1.4rem}nav.top .pf{gap:.9rem;font-size:.7rem;overflow-x:auto}}
 
 /* hero */
 .hero{position:relative;overflow:hidden}
@@ -68,7 +72,7 @@ figure img,figure video{width:100%;height:auto;display:block;border-radius:14px;
 figcaption{font-size:14px;color:var(--muted);line-height:1.45}
 figcaption b{color:var(--ink);font-weight:600}
 .chip{display:inline-block;font:600 12px/1 var(--body);padding:6px 10px;border-radius:999px;background:var(--swell);color:var(--ink)}
-.chip.p{background:var(--pulse);color:#001400}
+.chip.p{background:var(--pulse);color:#0b0b0b}
 .vrow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .vrow figure img{border-radius:10px}
 .vgroup{display:grid;gap:12px}
@@ -103,14 +107,14 @@ pre{margin:0;white-space:pre-wrap;font:400 14px/1.55 ui-monospace,SFMono-Regular
 .dl ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
 details.pd summary{cursor:pointer;font:500 15px var(--body);color:var(--blue);padding:6px 0}
 details.pd[open] summary{margin-bottom:8px}
-button.phone{border:0;padding:8px;cursor:pointer;display:block;font:inherit;background:#0047FF}
+button.phone{border:0;padding:8px;cursor:pointer;display:block;font:inherit;background:#1FA8BC}
 .film-poster img{width:100%;height:100%;object-fit:cover;display:block;border-radius:21px}
-.playbtn{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;background:#0047FF;color:#F6F5F2;font:500 15px var(--body);letter-spacing:-0.02em;padding:10px 18px 10px 14px;border-radius:999px;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);transition:transform .15s}
+.playbtn{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;background:#1FA8BC;color:#F6F5F2;font:500 15px var(--body);letter-spacing:-0.02em;padding:10px 18px 10px 14px;border-radius:999px;box-shadow:0 8px 24px -8px rgba(0,0,0,.5);transition:transform .15s}
 .playbtn svg{width:18px;height:18px;fill:currentColor}
 button.phone:hover .playbtn{transform:translateX(-50%) scale(1.05)}
 .fm{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:rgba(0,20,0,.82);backdrop-filter:blur(8px);padding:16px}
 .fm.on{display:flex}
-.fm .device{position:relative;height:min(88vh,860px);background:#0047FF;border-radius:48px;padding:12px;box-shadow:0 0 0 2px #2F6BFF inset,0 40px 80px -20px rgba(0,0,0,.7)}
+.fm .device{position:relative;height:min(88vh,860px);background:#1FA8BC;border-radius:48px;padding:12px;box-shadow:0 0 0 2px #46C0D2 inset,0 40px 80px -20px rgba(0,0,0,.7)}
 .fm .screen{position:relative;height:100%;aspect-ratio:9/16;max-width:calc(100vw - 56px);border-radius:38px;overflow:hidden;background:#000;display:flex;align-items:center}
 .fm .screen video{width:100%;height:100%;object-fit:contain;display:block}
 .fm .island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:28%;height:22px;background:#000;border-radius:20px;z-index:2;pointer-events:none}
@@ -140,14 +144,14 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
 </style>
 
 <nav class="top" aria-label="Sections">
-  <div class="wrap">
-    <a class="back" href="https://talianaiman.design">&larr; Portfolio</a>
-    <img class="wm-light" src="wordmark-blue.png" alt="upside">
-    <img class="wm-dark" src="wordmark-white.png" alt="upside">
-    <div class="links">
-      <a href="#video">Video</a><a href="#platform">Platform</a><a href="#statics">Static ads</a><a href="#variations">Variations</a>
-      <a href="#storyboard">Storyboard</a><a href="#behind">Behind the film</a><a href="#hooks">Hooks</a><a href="#process">Process</a>
+  <div class="bar">
+    <a class="logo" href="https://talianaiman.design/">Talia Naiman</a>
+    <div class="pf">
+      <a href="https://talianaiman.design/">Home</a><a href="https://talianaiman.design/#row-branding">Branding</a><a href="https://talianaiman.design/#row-ai">Films</a><a href="https://talianaiman.design/#contact">About</a><a href="https://talianaiman.design/#contact">Contact</a>
     </div>
+  </div>
+  <div class="links">
+    <a href="#video">Video</a><a href="#platform">Platform</a><a href="#statics">Static ads</a><a href="#variations">Variations</a><a href="#storyboard">Storyboard</a><a href="#behind">Behind the film</a><a href="#hooks">Hooks</a><a href="#process">Process</a>
   </div>
 </nav>
 
