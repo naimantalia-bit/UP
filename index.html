@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
 <style>
 /* Layout: one long brand page in Upside's own language. Whitecap ground, Gilmer headlines, Pulse marker as the only flourish,
-   a thin Pulse thread that runs through the hero the way it runs through the ads. Parts follow the assignment order. */
+   a thin Pulse thread that runs through the hero the way it runs through the ads. */
 @font-face{font-family:"Gilmer";src:url("gilmer-medium.otf") format("opentype");font-weight:500;font-display:swap}
 :root{
   --bg:#07120F; --surface:#0E1C18; --ink:#F6F5F2; --muted:#A9B8B2; --line:#1F332D;
@@ -146,7 +146,7 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
     <img class="wm-dark" src="wordmark-white.png" alt="upside">
     <div class="links">
       <a href="#video">Video</a><a href="#platform">Platform</a><a href="#statics">Static ads</a><a href="#variations">Variations</a>
-      <a href="#storyboard">Storyboard</a><a href="#behind">Behind the film</a><a href="#hooks">Hooks</a><a href="#process">Process</a><a href="#downloads">Downloads</a>
+      <a href="#storyboard">Storyboard</a><a href="#behind">Behind the film</a><a href="#hooks">Hooks</a><a href="#process">Process</a>
     </div>
   </div>
 </nav>
@@ -157,7 +157,7 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
   </svg>
   <div class="wrap">
     <div>
-      <div class="label">Moburst home assignment · AI Design Lead</div>
+      <div class="label">Campaign for the UP app</div>
       <h1 style="margin-top:16px">Till <span class="mark">cash back</span> do us part</h1>
       <p class="lede">A campaign for Upside about the everyday couple who never miss a chance to earn. Six parts, from the big idea to the final video, plus the process behind every choice.</p>
       <div class="meta"><span><b>Talia Naiman</b></span><span>Client: Upside</span><span>October 2026</span></div>
@@ -239,7 +239,7 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
 <!-- PART 4 -->
 <section class="part" id="storyboard"><div class="wrap">
   <div class="head"><div class="label">Part 4 · Video storyboard</div><h2>Six frames: Saturday, 7:02 AM</h2>
-    <p class="muted">The couple concept as a 40 second vertical video. The three app steps from the brief (claim, pay, earn) are carried by UI that animates over live action.</p></div>
+    <p class="muted">The couple concept as a 40 second vertical video. The three app steps (claim, pay, earn) are carried by UI that animates over live action.</p></div>
   <figure><img src="bts_storyboard.jpg" alt="Original 12 frame storyboard" loading="lazy"><figcaption><b>Original storyboard, 12 frames.</b> Written and boarded by me before generating any video: the realization, out the door, the hose, the chase, the car in sight, mission complete.</figcaption></figure>
   <div class="label" style="margin-top:8px">The final edit in six frames</div>
   <div class="sb">
@@ -284,7 +284,7 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
   <div class="tbl"><table>
     <thead><tr><th>Tool</th><th>Used for</th><th>Why this tool</th></tr></thead>
     <tbody>
-      <tr><td>Claude</td><td>Brief cracking, creative research, a custom Upside brand skill, UI animation over the film, statics, variations, motion piece, brand audits</td><td>One agent that reads the brand book and writes the code, so every frame is built from the real fonts, logo and colour values and can be checked by measurement</td></tr>
+      <tr><td>Claude</td><td>Creative research, a custom Upside brand skill, UI animation over the film, statics, variations, motion piece, brand audits</td><td>One agent that reads the brand book and writes the code, so every frame is built from the real fonts, logo and colour values and can be checked by measurement</td></tr>
       <tr><td>Midjourney</td><td>Characters and world design</td><td>Strongest control of look and casting for a believable, saturated "real people" style</td></tr>
       <tr><td>ChatGPT + Photoshop</td><td>Image creation for the static ads with Claude, compositing the photography banners in Photoshop, fixing and preparing stills for animation, character sheet, moodboard, script polish</td><td>Fast precise edits on single frames before they go to video</td></tr>
       <tr><td>Seedance via Runway</td><td>Most of the animated shots</td><td>Best character consistency and motion for comedic physical action</td></tr>
@@ -297,353 +297,8 @@ footer .wrap{padding-block:40px;display:flex;flex-wrap:wrap;gap:12px 32px;justif
       <tr><td>Playwright, ffmpeg, OpenCV</td><td>Frame rendering, compositing, car tracking, hooks</td><td>Pixel exact control and repeatable renders</td></tr>
     </tbody>
   </table></div>
-
-  <h3>Key prompts</h3>
-  <div class="grid g2">
-    <figure style="grid-column:1/-1"><figcaption><b>Main character (Midjourney)</b></figcaption><pre>Ultra-photorealistic cinematic fashion casting portrait of an effortlessly chic 35-year-old American woman, a charismatic fashion guru with the confident attitude of a high-end fashion editor.
-Striking but natural facial features, expressive almond-shaped brown eyes, defined cheekbones, full lips, beautifully groomed eyebrows, luminous realistic skin, rich brunette hair styled in large colorful vintage hair rollers.
-She wears a luxurious powder-blue silk dressing gown with elegant tailoring, delicate gold jewelry, oversized glamorous sunglasses resting on her head, and a perfectly coordinated pajama set underneath.
-She holds a white takeaway coffee cup with casual confidence.
-Her expression is cool, intelligent, subtly amused and completely self-assured. She radiates the energy of a woman who could turn an ordinary suburban driveway into a Paris Fashion Week runway.
-A beautiful upscale American suburban home in the softly blurred background, early morning natural sunlight, sophisticated contemporary fashion editorial photography combined with grounded Hollywood action-comedy realism.
-Medium portrait, 50mm lens, f/2.8, realistic skin pores, subtle film grain, premium wardrobe textures, cinematic color grading, believable human proportions, no exaggerated facial features, no cartoon, no illustration, no text, no watermark, 16:9.</pre></figure>
-    <figure style="grid-column:1/-1"><figcaption><b>Film shot 01 · The Realization (Seedance, written with ChatGPT)</b> The opening, kitchen window and the departing SUV. Focus: cinematic direction, performance and shot continuity.</figcaption><details class="pd"><summary>Show the full prompt</summary><pre>Create a 10-second, ultra-photorealistic live-action opening sequence for a fast-paced Hollywood action-comedy commercial.
-
-Use the provided character and environment references.
-
-Preserve the woman&#x27;s EXACT facial identity, dark brunette hair with colorful rollers, dusty-pink terry bathrobe, plain white cotton shirt, long cream pajama trousers and simple flat pink house slippers.
-
-LOCATION: An authentic suburban family home in Minnesota on an early-summer morning. Natural daylight, mature trees, green lawns and a quiet residential street.
-
-SHOT 1 | 0:00–0:03 | THE INTERRUPTION
-
-Medium close-up, 50mm lens.
-
-The woman stands near the kitchen window, holding a plain white ceramic coffee mug in her LEFT hand.
-
-As she raises the mug toward her mouth, she hears her husband&#x27;s car starting outside.
-
-Her eyes dart toward the window. She turns her head quickly, interrupted mid-sip.
-
-A short, controlled camera push-in captures the sudden change in her expression.
-
-HARD CUT.
-
-SHOT 2 | 0:03–0:05 | THE DEPARTURE
-
-Dynamic POV through the kitchen window.
-
-A dark gray family SUV is pulling out of the driveway.
-
-The camera reacts with a quick, natural pan, following the departing vehicle.
-
-Realistic vehicle acceleration, wheel rotation and suspension movement.
-
-HARD CUT.
-
-SHOT 3 | 0:05–0:10 | THE REALIZATION
-
-Tight close-up, 85mm lens.
-
-The woman realizes her husband is about to buy gas without claiming their Upside offer first.
-
-Her expression shifts instantly from relaxed to focused.
-
-She lowers the mug, mutters a quick &quot;No, no, no,&quot; then spins away from the window and rushes toward the front door.
-
-The camera follows with an energetic whip pan and short handheld tracking movement.
-
-She nearly clips a chair, makes an instinctive sidestep and continues without slowing down.
-
-CAMERA AND PERFORMANCE:
-
-Precise, energetic Hollywood action-comedy cinematography.
-
-Fast, spontaneous human movement with believable weight and momentum.
-
-Natural camera reactions, realistic motion blur, sharp motivated cuts.
-
-No robotic gestures, exaggerated expressions, floating camera movements or slow motion.
-
-CONTINUITY:
-
-The coffee mug remains in her LEFT hand. Her smartphone stays in her bathrobe pocket.
-
-Preserve her exact identity and wardrobe throughout.
-
-Vertical 9:16. Premium cinematic realism.</pre></details></figure>
-    <figure style="grid-column:1/-1"><figcaption><b>Film shot 02 · The Water Jump (Seedance, written with ChatGPT)</b> The skateboard ollie over the sprinkler. Focus: action choreography, motion physics and visual comedy.</figcaption><details class="pd"><summary>Show the full prompt</summary><pre>Continue directly from the previous skateboard chase as a single continuous, ultra-photorealistic Hollywood action-comedy sequence.
-
-DURATION: 10 seconds.
-FORMAT: Vertical 9:16.
-
-Preserve the woman&#x27;s EXACT facial identity, colorful hair rollers, dusty-pink terry bathrobe, white cotton shirt, long cream pajama trousers and flat pink slippers.
-
-She rides the same Electric Blue skateboard with mint-green wheels and carries a white ceramic coffee mug in her LEFT hand.
-
-LOCATION: A leafy residential neighborhood in Minnesota, early-summer morning.
-
-ACTION:
-
-0:00–0:02 | THE APPROACH
-
-The woman charges forward with real speed and determination.
-
-She gives one powerful push with her RIGHT foot, places it back on the board and leans into the ride.
-
-Her knees flex, shoulders shift and bathrobe flutters naturally.
-
-The camera races alongside her, low to the ground.
-
-0:02–0:04 | THE OBSTACLE
-
-A neighbor watering his front lawn accidentally sweeps a stream of water across the sidewalk.
-
-She spots the obstacle at the last possible moment.
-
-Her eyes sharpen. She drops her center of gravity, bends both knees and prepares to jump.
-
-The neighbor recoils in surprise.
-
-0:04–0:06 | THE JUMP
-
-In one explosive, physically coordinated motion, she performs a quick skateboard ollie over the water stream.
-
-Both feet remain planted on the board.
-
-Her free RIGHT arm extends outward for balance.
-
-The sudden movement makes a small amount of coffee rise out of the mug in a realistic airborne arc.
-
-For one thrilling instant, the woman, skateboard and coffee are airborne together.
-
-No floating or slow motion.
-
-0:06–0:08 | THE LANDING
-
-She lands firmly on all four wheels.
-
-Her knees absorb the impact naturally.
-
-She instinctively adjusts the mug beneath the falling coffee so that most of the liquid returns to the cup through gravity and hand movement.
-
-A few droplets escape.
-
-The skateboard continues rolling rapidly.
-
-0:08–0:10 | THE PAYOFF
-
-She straightens up and gives a brief, genuinely pleased, slightly smug smile.
-
-Without slowing down, she leans into her next turn and accelerates out of frame.
-
-CAMERA:
-
-28mm full-frame cinema lens.
-
-Fast, low-angle tracking camera approximately 45 cm above the ground.
-
-Reactive camera adjustment as the water enters her path.
-
-Quick natural tilt during the jump, followed by a subtle physical jolt on landing.
-
-PERFORMANCE:
-
-Athletic, spontaneous, daring and deadpan.
-
-Constant natural body movement: shoulder shifts, knee compression, weight transfers and balance corrections.
-
-PHYSICS:
-
-Realistic skateboard momentum and wheel rotation.
-
-Natural body weight, gravity, fabric movement and water interaction.
-
-The coffee must follow physically plausible motion rather than magically reversing direction.
-
-No robotic movement, impossible anatomy, floating objects, artificial water behavior or facial morphing.</pre></details></figure>
-    <figure style="grid-column:1/-1"><figcaption><b>Film shot 03 · The Last-Second Save (Seedance, written with ChatGPT)</b> The gas station save and the coffee handoff. Focus: character interaction, dialogue timing and prop continuity.</figcaption><details class="pd"><summary>Show the full prompt</summary><pre>Continue directly from the dramatic skateboard arrival at the gas station.
-
-Create a fast, spontaneous, ultra-photorealistic Hollywood action-comedy scene.
-
-DURATION: 10 seconds.
-FORMAT: Vertical 9:16.
-
-CHARACTER CONTINUITY:
-
-Preserve the woman&#x27;s EXACT established facial identity, colorful hair rollers, dusty-pink terry bathrobe, white shirt, long cream pajama trousers and flat pink slippers.
-
-Preserve the husband&#x27;s established appearance: middle-aged man with short graying hair, dark navy casual jacket, light blue shirt and dark jeans.
-
-The same dark gray SUV is parked beside the gas pump.
-
-The woman holds a normal-sized smartphone in her RIGHT hand, with its screen facing her.
-
-She holds ONE plain white ceramic mug in her LEFT hand.
-
-The mug contains a small, clearly visible amount of dark-brown coffee.
-
-ACTION:
-
-0:00–0:01.5 | BABE?!
-
-The husband hears her dramatic skateboard stop.
-
-He jolts, turns sharply and takes a small instinctive step backward.
-
-He blurts out, genuinely shocked:
-
-HUSBAND: &quot;BABE?!&quot;
-
-His reaction is immediate, surprised and unplanned.
-
-0:01.5–0:03.5 | DON&#x27;T PUMP!
-
-The woman is still energized and slightly breathless from the chase.
-
-She plants one foot firmly on the ground, leans toward him and interrupts in a single urgent burst:
-
-WIFE: &quot;NO! DON&#x27;T PUMP! WE&#x27;VE GOT UPSIDE!&quot;
-
-Her shoulders and hands move naturally with the intensity of the moment.
-
-The coffee visibly moves inside the mug as she gestures.
-
-0:03.5–0:06.5 | THE COFFEE HANDOFF
-
-Without stopping to explain, she quickly extends the coffee mug toward her husband.
-
-He instinctively reaches out and takes the SAME mug by its handle.
-
-For a brief moment, both characters touch the same object.
-
-His fingers close securely around the handle before she releases her grip.
-
-She withdraws her LEFT hand, which is now completely empty.
-
-The husband becomes the only person holding the mug.
-
-The small amount of coffee inside reacts naturally to the movement.
-
-0:06.5–0:08 | THE CLAIM
-
-She shifts her attention to her smartphone.
-
-The screen faces HER, not the camera.
-
-She makes one purposeful tap, then angles the phone slightly toward her husband.
-
-He leans forward to look.
-
-His expression begins to change from confusion to understanding.
-
-The authentic Upside app interface will be inserted during post-production.
-
-0:08–0:10 | THE PUNCHLINE
-
-His expression transforms into genuine admiration.
-
-He gives a brief spontaneous laugh and says:
-
-HUSBAND: &quot;You&#x27;re a genius.&quot;
-
-She responds with a tiny, satisfied smile.
-
-The moment feels affectionate, witty and completely natural.
-
-CAMERA:
-
-35mm full-frame lens.
-
-Dynamic medium two-shot with subtle handheld energy.
-
-Maintain clear visibility of both faces and the mug during the handoff.
-
-A small reactive camera adjustment follows the husband&#x27;s initial surprise.
-
-Finish with a subtle push-in on the husband&#x27;s expression.
-
-PERFORMANCE:
-
-The characters must react to each other naturally, with overlapping gestures, spontaneous eye movements and believable physical timing.
-
-Avoid synchronized acting, frozen poses, theatrical expressions and robotic movements.
-
-STRICT OBJECT CONTINUITY:
-
-Exactly ONE coffee mug exists throughout the scene.
-
-The mug physically transfers from the woman&#x27;s LEFT hand to the husband&#x27;s hand.
-
-No duplicated cups, disappearing objects, distorted fingers or impossible hand positions.
-
-The smartphone remains realistically proportioned.
-
-VISUAL STYLE:
-
-Authentic suburban Minnesota gas station, natural early-summer morning light and restrained brand-blue environmental accents.
-
-Real human skin texture, natural fabric movement and subtle cinematic film grain.</pre></details></figure>
-    <figure><figcaption><b>Brand skill (to Claude)</b></figcaption><pre>Before we start the creative, build me a careful and precise skill for the brand. I'll attach the font, the brand book and the brief. Put into the skill After Effects knowledge you find online.</pre></figure>
-    <figure><figcaption><b>Motion direction (to Claude)</b></figcaption><pre>More interest, it feels like a presentation. Change top and bottom, one slide closes and the next starts with a word that grows and shrinks. Like After Effects, young, pop, dynamic, fun, colours change, all within the brand.</pre></figure>
-  </div>
-
-  <h3>Iterations</h3>
-  <div class="ba">
-    <div class="box"><div class="label">Logo</div><p class="from">First: the logo from the website, with the U icon locked up next to the wordmark.</p><p>Kept: the wordmark file extracted from the brand book, never locked up with the icon, in approved colourways only. Checked at 96 to 98% pixel match.</p></div>
-    <div class="box"><div class="label">Statics</div><p class="from">First: photo crops from the film with heavy colour blocks. The 480p source looked soft and the blocks felt heavy.</p><p>Kept: a clean Swiss grid with Upside's own illustration library, two type sizes, and one Pulse accent.</p></div>
-    <div class="box"><div class="label">Photography banners</div><p class="from">First: automatic cutouts of her from the film. Edges looked cut out and pasted on.</p><p>Kept: the layout built as code with an open photo card, and every frame composited by hand in Photoshop so the photo and the type sit together.</p></div>
-    <div class="box"><div class="label">Illustration</div><p class="from">First: new figures drawn by hand in vector. They looked stiff and off brand.</p><p>Kept: only figures from Upside's illustration library, recoloured for dark backgrounds, so every character comes from the same illustrator.</p></div>
-    <div class="box"><div class="label">Motion</div><p class="from">First: a camera pan across the slides. It felt like a presentation.</p><p>Kept: kinetic word beats, iris reveals, colour band wipes, and a skater and a car that pull the thread into the next scene.</p></div>
-  </div>
-  <h3>Problems and fixes</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
-    <tbody>
-      <tr><td>Low resolution film</td><td>The generated film was 480×854. Upscaled to 4K in Topaz Starlight before compositing the UI.</td></tr>
-      <tr><td>Cut points moved between versions</td><td>Each recut shifted the shots by fractions of a second. Scene detection on both versions, then the overlay timeline was remapped cut by cut.</td></tr>
-      <tr><td>Wrong logo and font weight</td><td>Audit against the book found the website icon and Gilmer Bold. Replaced with book files and Gilmer Medium, UI in Inter Tight, tracking −20 everywhere.</td></tr>
-      <tr><td>Rough cutouts</td><td>Background removal broke motion blurred hands. Switched to framed photos with a head pop out, then to the illustration library.</td></tr>
-      <tr><td>Dash like marks in the motion</td><td>Elements that scaled up from zero looked like thin lines for a frame. They now fade in only at real size; every entrance checked frame by frame.</td></tr>
-      <tr><td>Waving arm detached</td><td>The cut arm rotated around the wrong pivot and left a smear. Replaced with a gentle sway of the whole figure.</td></tr>
-    </tbody>
-  </table></div>
-  <h3>Time per part</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Part</th><th>Time</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td>Part 1 · Platform</td><td class="num">3 h</td><td>Brief, brand book, site and competitor research, concept routes</td></tr>
-      <tr><td>Part 2 · Static ads</td><td class="num">4 h</td><td>Image creation, largely with Claude and ChatGPT, plus Photoshop compositing: three directions, brand audits and the illustration work</td></tr>
-      <tr><td>Part 3 · Variations</td><td class="num">5 h</td><td>Together with Part 6: variation engine, copy testing plan, brand checks and review</td></tr>
-      <tr><td>Part 4 · Storyboard</td><td class="num">1 h</td><td>Script and storyboard</td></tr>
-      <tr><td>Part 5 · Video</td><td class="num">6 h</td><td>Film generation and edit, then UI animation, music and After Effects finishing</td></tr>
-      <tr><td>Part 6 · Hooks</td><td class="num">incl. in Part 3</td><td>Three openings cut from the master</td></tr>
-    </tbody>
-  </table></div>
-  <h3>With paid tools</h3>
-  <div class="grid g2">
-    <div class="box"><p>Train a character model of the couple so every shot keeps the same faces, and generate natively in 4K instead of upscaling.</p></div>
-    <div class="box"><p>Finish the UI layer in After Effects with the brand skill's scripts, export Lottie files for the app team, and add a licensed voice over.</p></div>
-    <div class="box"><p>Run the variation engine into a creative testing tool and let real performance data pick the next round of hooks and colourways.</p></div>
-    <div class="box"><p>More generation credits and editing tools to test several takes of every shot, then refine inside the film itself: regenerate a single moment, fix hands or props in a shot, and change details without rebuilding the whole scene.</p></div>
-  </div>
 </div></section>
 
-
-
-<!-- DOWNLOADS -->
-<section class="part" id="downloads"><div class="wrap">
-  <div class="head"><div class="label">Downloads</div><h2>All the deliverables, ready to download</h2>
-    <p class="muted">Every file requested in the brief, by part. Click a file to download it. All statics are 1080 × 1080 PNG.</p></div>
-  <div class="grid g3">
-    <div class="box dl"><div class="label">Part 1 and process notes</div><div class="big">Full overview</div><ul><li>Campaign platform</li><li>Tools, prompts, iterations, time per part</li><li>Every part on one PDF</li></ul><a class="go" href="Upside_Submission_Overview.pdf" download style="text-decoration:none">Download PDF · 2.6 MB</a></div>
-    <div class="box dl"><div class="label">Part 2</div><div class="big">Static ads</div><ul class="files"><li><a href="Ad1_Photography.png" download>Ad 1 · Photography</a></li><li><a href="Ad2_Typography.png" download>Ad 2 · Typography</a></li><li><a href="Ad3_Vector.png" download>Ad 3 · Vector</a></li><li><a href="Bonus_Vector_Motion.mp4" download>Bonus · vector motion (MP4)</a></li></ul></div>
-    <div class="box dl"><div class="label">Part 3</div><div class="big">15 variations</div><ul class="files"><li>Photography <a href="Photo_A.png" download>A</a> <a href="Photo_B.png" download>B</a> <a href="Photo_C.png" download>C</a> <a href="Photo_D.png" download>D</a> <a href="Photo_E.png" download>E</a></li><li>Typography <a href="Type_A.png" download>A</a> <a href="Type_B.png" download>B</a> <a href="Type_C.png" download>C</a> <a href="Type_D.png" download>D</a> <a href="Type_E.png" download>E</a></li><li>Vector <a href="Vector_A.png" download>A</a> <a href="Vector_B.png" download>B</a> <a href="Vector_C.png" download>C</a> <a href="Vector_D.png" download>D</a> <a href="Vector_E.png" download>E</a></li></ul></div>
-    <div class="box dl"><div class="label">Part 4</div><div class="big">Storyboard</div><ul class="files"><li><a href="Storyboard_12_frames.jpg" download>12 frame storyboard</a></li><li>Key frames <a href="Frame_1.jpg" download>1</a> <a href="Frame_2.jpg" download>2</a> <a href="Frame_3.jpg" download>3</a> <a href="Frame_4.jpg" download>4</a> <a href="Frame_5.jpg" download>5</a> <a href="Frame_6.jpg" download>6</a></li></ul></div>
-    <div class="box dl"><div class="label">Part 5</div><div class="big">The film</div><ul><li>Upside, final cut with music</li><li>9:16 MP4</li></ul><a class="go" href="Upside_Part5_Film_Talia_Naiman.mp4" download style="text-decoration:none">Download MP4 · 9.9 MB</a></div>
-    <div class="box dl"><div class="label">Part 6</div><div class="big">Video hooks</div><ul class="files"><li><a href="Hook_A_TheStare.mp4" download>Hook A · The stare</a></li><li><a href="Hook_B_FlashForward.mp4" download>Hook B · Flash forward</a></li><li><a href="Hook_C_TheVow.mp4" download>Hook C · The vow</a></li></ul></div>
-    </div>
-</div></section>
 
 
 <div class="fm" id="fm" role="dialog" aria-modal="true" aria-label="The film"><button type="button" class="x" aria-label="Close">&times;</button><div class="device"><div class="island"></div><div class="screen"><video id="fmv" src="film.mp4" playsinline controls preload="none" poster="sb1.jpg"></video></div></div></div>
@@ -655,4 +310,4 @@ document.querySelectorAll(".open-film").forEach(b=>b.addEventListener("click",op
 fm.addEventListener("click",e=>{if(e.target===fm||e.target.classList.contains("x"))close()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&fm.classList.contains("on"))close()});})();
 </script>
-<footer><div class="wrap"><span>Talia Naiman · AI Design Lead home assignment for Moburst</span><span>Offers vary by user and location.</span></div></footer>
+<footer><div class="wrap"><span>Talia Naiman</span><span>Offers vary by user and location.</span></div></footer>
